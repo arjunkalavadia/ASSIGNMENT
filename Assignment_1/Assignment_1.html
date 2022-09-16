@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment_1</title>
+</head>
+
+<body>
+    <table cellpadding="5px" border="1px" align="center">
+        <thead>
+            <td>Product info</td>
+            <td>Quantity</td>
+            <td>Price per unit</td>
+            <td>Price Subtotal</td>
+            <td>Remove</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Fortune window hardware</td>
+                <td><input type="number" id="qty1" onchange="subtotal1()"></td>
+                <td><input type="number" id="price1" value="125"></td>
+                <td> <span id="result1"></span></td>
+                <td><button id="remove1" onclick="remove1()">Remove</button></td>
+            </tr>
+
+            <tr>
+                <td>Fortune window hardware</td>
+                <td><input type="number" id="qty2" onchange="subtotal2()"></td>
+                <td><input type="number" id="price2" value="150"></td>
+                <td> <span id="result2"></span></td>
+                <td><button id="remove2" onclick="remove2()">Remove</button></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="3">SubTotal</td>
+                <td><Span id="subtotal"></Span></td>
+                <td><button id="subtotalbtn" onclick="subtotal()">Subtotal</button></td>
+
+            </tr>
+        </tbody>
+    </table>
+
+
+    
+</body>
+
+</html>
+
+<script>
+    function subtotal1() {
+        let q = document.getElementById('qty1').value;
+        let p = document.getElementById('price1').value;
+        document.getElementById('result1').innerText = p * q;
+
+        // console.log(p*q);
+
+    }
+    function remove1() {
+        document.getElementById('result1').innerText = "";
+        let q = document.getElementById('qty1').value = "";
+    }
+
+    function subtotal2() {
+        let q = document.getElementById('qty2').value;
+        let p = document.getElementById('price2').value;
+        document.getElementById('result2').innerText = p * q;
+
+        // console.log(p*q);
+
+    }
+    function remove2() {
+        document.getElementById('result2').innerText = "";
+        let q = document.getElementById('qty2').value = "";
+    }
+    function subtotal()
+    {
+        let r1 = document.getElementById('result1').value;
+        let r2 = document.getElementById('result2').value;
+       document.getElementById('subtotal').innerText= r1+r2
+    }
+</script>
